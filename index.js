@@ -1,1 +1,1 @@
-console.log("test index")
+console.log("Your Node is probably working.")

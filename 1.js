@@ -31,7 +31,7 @@ function findThree(dataArray)
     }
 }
 
-fs.readFile('1a.txt', 'utf8', (err, data) => {
+fs.readFile('inputs/1.txt', 'utf8', (err, data) => {
     if (err) {
         console.error(err)
         return

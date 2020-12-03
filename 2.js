@@ -52,7 +52,7 @@ function secondRule(dataArray) {
     console.log(matchCount)
 }
 
-fs.readFile('2.txt', 'utf8', (err, data) => {
+fs.readFile('inputs/2.txt', 'utf8', (err, data) => {
     if (err) {
         console.error(err)
         return
@@ -60,7 +60,7 @@ fs.readFile('2.txt', 'utf8', (err, data) => {
     const dataArray = data.toString().split('\n')
 
     // console.log('abcdebqwq'.charAt(1));
-    // firstRule(dataArray);
+    firstRule(dataArray);
 
     secondRule(dataArray);
 })

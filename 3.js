@@ -27,7 +27,7 @@ function countTrees(dataArray, xVector, yVector) {
     return treeCount
 }
 
-fs.readFile('3.txt', 'utf8', (err, data) => {
+fs.readFile('inputs/3.txt', 'utf8', (err, data) => {
     if (err) {
         console.error(err)
         return
