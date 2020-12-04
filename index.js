@@ -1,1 +1,1 @@
-console.log("Your Node is probably working.")
+console.log('Your Node is probably working.')
