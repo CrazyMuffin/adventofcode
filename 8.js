@@ -1,6 +1,7 @@
 const fs = require('fs')
+const {performance} = require('perf_hooks')
 
-function run (instructions, alterOperation, changedOperations) {
+function run(instructions, alterOperation, changedOperations) {
   changedOperations = changedOperations || []
 
   let i = 0
@@ -52,7 +53,7 @@ function run (instructions, alterOperation, changedOperations) {
   }
 }
 
-function process (instructions) {
+function process(instructions) {
   run(instructions, false)
 
   let returnValue = 1
@@ -68,6 +69,9 @@ fs.readFile('inputs/8.txt', 'utf8', (err, data) => {
     return
   }
   const inputArray = data.toString().split('\n')
-
+  const t0 = performance.now()
   process(inputArray)
+  const t1 = performance.now()
+
+  console.log(`Processing took: ${t1 - t0} ms`)
 })
