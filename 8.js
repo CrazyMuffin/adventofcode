@@ -1,7 +1,7 @@
 const fs = require('fs')
-const {performance} = require('perf_hooks')
+const { performance } = require('perf_hooks')
 
-function run(instructions, alterOperation, changedOperations) {
+function run (instructions, alterOperation, changedOperations) {
   changedOperations = changedOperations || []
 
   let i = 0
@@ -53,7 +53,7 @@ function run(instructions, alterOperation, changedOperations) {
   }
 }
 
-function process(instructions) {
+function process (instructions) {
   run(instructions, false)
 
   let returnValue = 1
