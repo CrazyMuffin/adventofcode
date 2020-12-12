@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path');
 
 function process (passports) {
   const totalPassports = passports.length
@@ -73,7 +74,7 @@ function process (passports) {
   console.log(`${validPassports} of ${totalPassports} are actually valid.`)
 }
 
-fs.readFile('inputs/4.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '4.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

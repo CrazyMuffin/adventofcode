@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path');
 
 class BagStorage {
   constructor () {
@@ -75,7 +76,7 @@ function process (rules) {
   console.log(`Children of shiny gold bag: ${bagChildren}`)
 }
 
-fs.readFile('inputs/7.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '7.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

@@ -1,5 +1,6 @@
 const fs = require('fs')
-const { performance } = require('perf_hooks')
+const {performance} = require('perf_hooks')
+const path = require('path');
 
 function processSingleCount (ratings) {
   const differences = {
@@ -48,7 +49,7 @@ function processAllCount (ratings) {
   console.log(`All possible combinations: ${returnValue}`)
 }
 
-fs.readFile('inputs/10.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '10.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

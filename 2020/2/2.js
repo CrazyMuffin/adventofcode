@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path');
 
 function firstRule (dataArray) {
   let matchCount = 0
@@ -52,7 +53,7 @@ function secondRule (dataArray) {
   console.log(matchCount)
 }
 
-fs.readFile('inputs/2.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '2.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path');
 
 function process (passes) {
   let maxSeatID = 1
@@ -36,7 +37,7 @@ function process (passes) {
   }
 }
 
-fs.readFile('inputs/5.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '5.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

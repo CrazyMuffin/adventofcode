@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path');
 
 function makeUnique (str) {
   return String.prototype.concat(...new Set(str))
@@ -38,7 +39,7 @@ function process (questions) {
   console.log(`All Yes answers: ${allYesAnswers}`)
 }
 
-fs.readFile('inputs/6.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '6.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

@@ -1,5 +1,6 @@
 const fs = require('fs')
-const { performance } = require('perf_hooks')
+const {performance} = require('perf_hooks')
+const path = require('path');
 
 function run (instructions, alterOperation, changedOperations) {
   changedOperations = changedOperations || []
@@ -63,7 +64,7 @@ function process (instructions) {
   }
 }
 
-fs.readFile('inputs/8.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '8.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

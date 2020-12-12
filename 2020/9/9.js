@@ -1,5 +1,6 @@
 const fs = require('fs')
-const { performance } = require('perf_hooks')
+const {performance} = require('perf_hooks')
+const path = require('path');
 
 function isValid (currentNumber, preamble) {
   for (let i = 0; i < preamble.length; i++) {
@@ -48,7 +49,7 @@ function findSumForNumber (inputArray, invalidNumber) {
   console.error('No such set')
 }
 
-fs.readFile('inputs/9.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '9.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return

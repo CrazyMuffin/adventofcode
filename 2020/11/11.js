@@ -1,5 +1,6 @@
 const fs = require('fs')
 const {performance} = require('perf_hooks')
+const path = require('path');
 
 const vectors = [
   [-1, -1],
@@ -89,7 +90,7 @@ function process(seatPlan) {
   console.log(`Finished with ${occupiedCount} occupied seats`)
 }
 
-fs.readFile('inputs/11.txt', 'utf8', (err, data) => {
+fs.readFile(path.resolve(__dirname, '11.txt'), 'utf8', (err, data) => {
   if (err) {
     console.error(err)
     return
