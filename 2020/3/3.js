@@ -1,5 +1,5 @@
 const fs = require('fs')
-const path = require('path');
+const path = require('path')
 
 function countTrees (dataArray, xVector, yVector) {
   const xLength = dataArray[0].length

@@ -1,5 +1,5 @@
 const fs = require('fs')
-const path = require('path');
+const path = require('path')
 
 function process (passports) {
   const totalPassports = passports.length
@@ -26,7 +26,7 @@ function process (passports) {
     let partiallyValid = true
 
     for (const requiredField of requiredFields) {
-      if (!passport.hasOwnProperty(requiredField)) {
+      if (!passport[requiredField]) {
         partiallyValid = false
         break
       }

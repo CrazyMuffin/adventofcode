@@ -1,5 +1,5 @@
 const fs = require('fs')
-const path = require('path');
+const path = require('path')
 
 function makeUnique (str) {
   return String.prototype.concat(...new Set(str))

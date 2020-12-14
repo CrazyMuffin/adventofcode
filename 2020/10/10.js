@@ -1,8 +1,8 @@
 const fs = require('fs')
 const {performance} = require('perf_hooks')
-const path = require('path');
+const path = require('path')
 
-function processSingleCount (ratings) {
+function processSingleCount(ratings) {
   const differences = {
     1: 0,
     2: 0,

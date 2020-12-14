@@ -1,6 +1,6 @@
 const fs = require('fs')
 const {performance} = require('perf_hooks')
-const path = require('path');
+const path = require('path')
 
 const vectors = [
   [-1, -1],
@@ -10,7 +10,7 @@ const vectors = [
   [0, 1],
   [1, -1],
   [1, 0],
-  [1, 1],
+  [1, 1]
 ]
 
 const OCCUPY_THRESHOLD = 0
@@ -19,8 +19,8 @@ const LEAVE_THRESHOLD = 5
 
 function findSeat(grid, x, y, vector) {
   for (let multiplier = 1; multiplier < grid.length; multiplier++) {
-    const xCord = x + (vector[0] * multiplier);
-    const yCord = y + (vector[1] * multiplier);
+    const xCord = x + (vector[0] * multiplier)
+    const yCord = y + (vector[1] * multiplier)
     if (typeof grid[xCord] !== 'undefined' && typeof grid[xCord][yCord] !== 'undefined') {
       if (grid[xCord][yCord] === '.') {
         continue
@@ -38,7 +38,7 @@ function evolveCell(x, y, grid) {
     return '.'
   }
   for (const vector of vectors) {
-    const neighbourSeat = findSeat(grid, x, y, vector);
+    const neighbourSeat = findSeat(grid, x, y, vector)
     if (neighbourSeat === '#') {
       occupiedCount++
     }
@@ -72,11 +72,9 @@ function evolveGrid(grid) {
 function process(seatPlan) {
   let newSeatPlan = seatPlan
 
-  let iterationCount = 0
   do {
     seatPlan = newSeatPlan
     newSeatPlan = evolveGrid(seatPlan)
-    iterationCount++
   } while (JSON.stringify(seatPlan) !== JSON.stringify(newSeatPlan))
 
   let occupiedCount = 0

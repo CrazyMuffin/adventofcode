@@ -1,5 +1,5 @@
 const fs = require('fs')
-const path = require('path');
+const path = require('path')
 
 function findTwo (dataArray) {
   for (const xString of dataArray) {

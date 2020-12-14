@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 const fs = require('fs')
 const {performance} = require('perf_hooks')
 
@@ -24,10 +24,10 @@ function findSequence(timetable) {
   const length = timetable.length
   let timestamp = 0
   let success = 0
-  let successTable = {0: 1}
+  const successTable = {0: 1}
 
   while (success !== length) {
-    const busId = timetable[success];
+    const busId = timetable[success]
 
     if (busId !== 'x') {
       if (isDivisible(timestamp, busId)) {

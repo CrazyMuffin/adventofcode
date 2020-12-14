@@ -1,8 +1,8 @@
 const fs = require('fs')
 const {performance} = require('perf_hooks')
-const path = require('path');
+const path = require('path')
 
-function isValid (currentNumber, preamble) {
+function isValid(currentNumber, preamble) {
   for (let i = 0; i < preamble.length; i++) {
     for (let j = i + 1; j < preamble.length; j++) {
       if (preamble[i] + preamble[j] === currentNumber) {

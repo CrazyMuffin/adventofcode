@@ -1,8 +1,8 @@
 const fs = require('fs')
 const {performance} = require('perf_hooks')
-const path = require('path');
+const path = require('path')
 
-function run (instructions, alterOperation, changedOperations) {
+function run(instructions, alterOperation, changedOperations) {
   changedOperations = changedOperations || []
 
   let i = 0

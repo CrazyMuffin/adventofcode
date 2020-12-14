@@ -1,5 +1,5 @@
 const fs = require('fs')
-const path = require('path');
+const path = require('path')
 
 class BagStorage {
   constructor () {
@@ -14,7 +14,7 @@ class BagStorage {
     }
 
     for (const childBagName in bag.childBags) {
-      if (!this.bags.hasOwnProperty(childBagName)) {
+      if (!this.bags[childBagName]) {
         this.bags[childBagName] = new Bag(childBagName)
       }
       this.bags[childBagName].parentBags[bag.bagName] = 1

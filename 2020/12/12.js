@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 const fs = require('fs')
 const {performance} = require('perf_hooks')
 
@@ -7,25 +7,24 @@ const moveVectors =
     [1, 0],
     [0, 1],
     [-1, 0],
-    [0, -1],
+    [0, -1]
   ]
 
 const rotateVectors = [
-  //[XX, XY, YX, YY]
+  // [XX, XY, YX, YY]
   [1, 0, 0, 1],
   [0, -1, 1, 0],
   [-1, 0, 0, -1],
   [0, 1, -1, 0]
 ]
 
-
 class Ship {
   constructor(x, y, wayX, wayY) {
-    this.x = x || 0 //NORTH + / SOUTH -
-    this.y = y || 0 //EAST + / WEST -
+    this.x = x || 0 // NORTH + / SOUTH -
+    this.y = y || 0 // EAST + / WEST -
 
-    this.wayX = wayX || 0 //NORTH + / SOUTH -
-    this.wayY = wayY || 0 //EAST + / WEST -
+    this.wayX = wayX || 0 // NORTH + / SOUTH -
+    this.wayY = wayY || 0 // EAST + / WEST -
 
     this.orientation = 100001 // 0 North, 1 East, 2 South, 3 West
   }
@@ -90,8 +89,6 @@ class Ship {
       this.y += distance
     } else if (direction === 'W') {
       this.y -= distance
-    } else {
-      throw "Incorrect direction"
     }
   }
 
@@ -104,8 +101,6 @@ class Ship {
       this.wayY += distance
     } else if (direction === 'W') {
       this.wayY -= distance
-    } else {
-      throw "Incorrect direction"
     }
   }
 
@@ -126,8 +121,8 @@ class Ship {
 }
 
 function rideShip(orders) {
-  let ship = new Ship()
-  let wayShip = new Ship(0, 0, 1, 10)
+  const ship = new Ship()
+  const wayShip = new Ship(0, 0, 1, 10)
 
   for (const order of orders) {
     ship.order(order)
