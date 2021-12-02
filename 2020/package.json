@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cli-progress": "^3.8.2",
+    "lodash": "^4.17.20"
+  }
 }
